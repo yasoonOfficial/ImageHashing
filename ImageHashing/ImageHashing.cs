@@ -62,7 +62,8 @@ namespace ImageHashing
             using (Graphics canvas = Graphics.FromImage(squeezed))
             {
                 canvas.CompositingQuality = CompositingQuality.HighQuality;
-                canvas.InterpolationMode = InterpolationMode.HighQualityBilinear;
+                canvas.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                canvas.InterpolationMode = InterpolationMode.HighQualityBicubic;
                 canvas.SmoothingMode = SmoothingMode.HighQuality;
                 canvas.DrawImage(image, 0, 0, 8, 8);
 
